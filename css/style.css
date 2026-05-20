@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #263238;
+}
+
+header {
+  background: #ffffff;
+  color: #263238;
+  text-align: center;
+  padding: 28px 16px;
+  border-bottom: 1px solid #dce3eb;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #2d5f8b;
+}
+
+nav {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+
+nav a {
+  display: inline-block;
+  background: #e8f1fa;
+  color: #2d5f8b;
+  text-decoration: none;
+  padding: 10px 18px;
+  margin: 5px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: 1px solid #c7d7e8;
+}
+
+nav a:hover {
+  background: #2d5f8b;
+  color: white;
+}
+
+main {
+  max-width: 950px;
+  margin: 28px auto;
+  padding: 0 18px;
+}
+
+.caixa {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border: 1px solid #dce3eb;
+  box-shadow: 0 4px 12px rgba(38, 50, 56, 0.08);
+}
+
+h2 {
+  color: #2d5f8b;
+  margin-top: 0;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.foto {
+  display: block;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 20px auto;
+  border-radius: 8px;
+  border: 4px solid #c7d7e8;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #c7d7e8;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #ffffff;
+  color: #263238;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2d5f8b;
+}
+
+button {
+  background: #2d5f8b;
+  color: white;
+  border: none;
+  padding: 11px 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #234b70;
+}
+
+.listas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f4f7fb;
+  margin-bottom: 10px;
+  padding: 13px;
+  border-radius: 6px;
+  border-left: 5px solid #8fb3d9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+li button {
+  background: #c95d63;
+  padding: 7px 10px;
+  font-size: 14px;
+}
+
+li button:hover {
+  background: #a84348;
+}
+
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  nav a {
+    display: block;
+    max-width: 220px;
+    margin: 8px auto;
+  }
+
+  .listas {
+    grid-template-columns: 1fr;
+  }
+
+  .foto {
+    width: 230px;
+    height: 230px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

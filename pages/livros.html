@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livros - Ias e Tata</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Meus Livros</h1>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="livros.html">Livros</a>
+      <a href="lugares.html">Lugares</a>
+    </nav>
+
+  <main>
+    <section class="caixa">
+      <h2>Adicionar livro</h2>
+
+      <input type="text" id="nomeLivro" placeholder="Nome do livro">
+
+      <select id="tipoLivro">
+        <option value="lidos">Livro que já li</option>
+        <option value="queroLer">Livro que quero ler</option>
+      </select>
+
+      <button onclick="adicionarLivro()">Adicionar</button>
+    </section>
+
+    <section class="listas">
+      <div class="caixa">
+        <h2>Livros que já li</h2>
+        <ul id="listaLidos"></ul>
+      </div>
+
+      <div class="caixa">
+        <h2>Livros que quero ler</h2>
+        <ul id="listaQueroLer"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

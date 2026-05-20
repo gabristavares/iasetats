@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lugares - Ias e Tata</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Nossos Lugares</h1>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="livros.html">Livros</a>
+      <a href="lugares.html">Lugares</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="caixa">
+      <h2>Adicionar lugar</h2>
+
+      <input type="text" id="nomeLugar" placeholder="Nome do lugar">
+
+      <select id="tipoLugar">
+        <option value="fomos">Lugar onde fomos</option>
+        <option value="queremosIr">Lugar onde queremos ir</option>
+      </select>
+
+      <button onclick="adicionarLugar()">Adicionar</button>
+    </section>
+
+    <section class="listas">
+      <div class="caixa">
+        <h2>Lugares onde fomos</h2>
+        <ul id="listaFomos"></ul>
+      </div>
+
+      <div class="caixa">
+        <h2>Lugares onde queremos ir</h2>
+        <ul id="listaQueremosIr"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

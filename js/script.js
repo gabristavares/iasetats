@@ -30,6 +30,7 @@ function adicionarLivro() {
 
   document.getElementById("nomeLivro").value = "";
   mostrarLivros();
+  mostrarBatman();
 }
 
 function removerLivro(tipo, posicao) {
@@ -118,6 +119,24 @@ function mostrarLugares() {
       </li>
     `;
   });
+}
+
+function mostrarBatman() {
+  const batmanFundo = document.getElementById("batmanFundo");
+
+  if (!batmanFundo) {
+    return;
+  }
+
+  batmanFundo.classList.remove("ativo");
+
+  setTimeout(function() {
+    batmanFundo.classList.add("ativo");
+  }, 10);
+
+  setTimeout(function() {
+    batmanFundo.classList.remove("ativo");
+  }, 1400);
 }
 
 mostrarLivros();

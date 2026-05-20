@@ -8,6 +8,60 @@ let lugares = JSON.parse(localStorage.getItem("lugares")) || {
   queremosIr: []
 };
 
+let contadorAnimacao = Number(localStorage.getItem("contadorAnimacao")) || 0;
+
+function aplicarTemaSalvo() {
+  const tema = localStorage.getItem("temaPagina");
+
+  if (tema === "homem-ferro") {
+    document.body.classList.add("tema-homem-ferro");
+  } else if (tema === "capitao-america") {
+    document.body.classList.add("tema-capitao-america");
+  }
+}
+
+function alternarTemaHomemFerro() {
+  document.body.classList.remove("tema-capitao-america");
+  document.body.classList.toggle("tema-homem-ferro");
+
+  if (document.body.classList.contains("tema-homem-ferro")) {
+    localStorage.setItem("temaPagina", "homem-ferro");
+  } else {
+    localStorage.setItem("temaPagina", "normal");
+  }
+}
+
+function alternarTemaCapitaoAmerica() {
+  document.body.classList.remove("tema-homem-ferro");
+  document.body.classList.toggle("tema-capitao-america");
+
+  if (document.body.classList.contains("tema-capitao-america")) {
+    localStorage.setItem("temaPagina", "capitao-america");
+  } else {
+    localStorage.setItem("temaPagina", "normal");
+  }
+}
+
+function abrirCoracao3D() {
+  const fundoCoracao = document.getElementById("fundoCoracao");
+
+  if (!fundoCoracao) {
+    return;
+  }
+
+  fundoCoracao.classList.add("ativo");
+}
+
+function fecharCoracao3D() {
+  const fundoCoracao = document.getElementById("fundoCoracao");
+
+  if (!fundoCoracao) {
+    return;
+  }
+
+  fundoCoracao.classList.remove("ativo");
+}
+
 function salvarLivros() {
   localStorage.setItem("livros", JSON.stringify(livros));
 }
@@ -30,7 +84,7 @@ function adicionarLivro() {
 
   document.getElementById("nomeLivro").value = "";
   mostrarLivros();
-  mostrarBatman();
+  mostrarAnimacaoHeroi();
 }
 
 function removerLivro(tipo, posicao) {
@@ -83,6 +137,7 @@ function adicionarLugar() {
 
   document.getElementById("nomeLugar").value = "";
   mostrarLugares();
+  mostrarGlobo();
 }
 
 function removerLugar(tipo, posicao) {
@@ -121,7 +176,7 @@ function mostrarLugares() {
   });
 }
 
-function mostrarBatman() {
+function mostrarAnimacaoHeroi() {
   const batmanFundo = document.getElementById("batmanFundo");
 
   if (!batmanFundo) {
@@ -129,15 +184,47 @@ function mostrarBatman() {
   }
 
   batmanFundo.classList.remove("ativo");
+  batmanFundo.classList.remove("batman-ativo");
+  batmanFundo.classList.remove("spiderman-ativo");
 
-  setTimeout(function() {
-    batmanFundo.classList.add("ativo");
-  }, 10);
+  if (contadorAnimacao % 2 === 0) {
+    batmanFundo.classList.add("batman-ativo");
+  } else {
+    batmanFundo.classList.add("spiderman-ativo");
+  }
+
+  contadorAnimacao++;
+  localStorage.setItem("contadorAnimacao", contadorAnimacao);
+
+  void batmanFundo.offsetWidth;
+
+  batmanFundo.classList.add("ativo");
 
   setTimeout(function() {
     batmanFundo.classList.remove("ativo");
-  }, 1400);
+    batmanFundo.classList.remove("batman-ativo");
+    batmanFundo.classList.remove("spiderman-ativo");
+  }, 2000);
 }
 
+function mostrarGlobo() {
+  const fundoGlobo = document.getElementById("fundoGlobo");
+
+  if (!fundoGlobo) {
+    return;
+  }
+
+  fundoGlobo.classList.remove("ativo");
+
+  void fundoGlobo.offsetWidth;
+
+  fundoGlobo.classList.add("ativo");
+
+  setTimeout(function() {
+    fundoGlobo.classList.remove("ativo");
+  }, 1900);
+}
+
+aplicarTemaSalvo();
 mostrarLivros();
 mostrarLugares();

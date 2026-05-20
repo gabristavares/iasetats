@@ -7,6 +7,34 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div id="fundoCoracao" class="fundo-coracao" onclick="fecharCoracao3D()">
+    <button class="fechar-coracao" onclick="fecharCoracao3D(); event.stopPropagation();" aria-label="Fechar">x</button>
+    <div class="cena-amor">
+      <div class="bolha-amor bolha-grande">
+        <span>I LOVE<br>YOU</span>
+      </div>
+      <div class="bolha-amor bolha-1">
+        <span>Te<br>amo</span>
+      </div>
+      <div class="bolha-amor bolha-2">
+        <span>Amor<br>da minha<br>vida</span>
+      </div>
+      <div class="bolha-amor bolha-3">
+        <span>My<br>Love</span>
+      </div>
+      <div class="bolha-amor bolha-4">
+        <span>Me<br>encantas</span>
+      </div>
+      <div class="bolha-amor bolha-5">
+        <span>Ias<br>& Tata</span>
+      </div>
+      <div class="bolha-amor bolha-6">
+        <span>Love</span>
+      </div>
+      <div class="coracao-brilho">❤</div>
+    </div>
+  </div>
+
   <header>
     <h1>Ias e Tata</h1>
 
@@ -14,6 +42,12 @@
         <a href="index.html">Home</a>
         <a href="pages/livros.html">Livros</a>
         <a href="pages/lugares.html">Lugares</a>
+        <button class="botao-tema" onclick="alternarTemaHomemFerro()" aria-label="Mudar tema">
+          <span class="reator"></span>
+        </button>
+        <button class="botao-tema botao-capitao" onclick="alternarTemaCapitaoAmerica()" aria-label="Mudar tema Capitão América">
+          <span class="escudo-capitao"></span>
+        </button>
     </nav>
   </header>
 
@@ -21,12 +55,13 @@
     <section class="caixa">
       <h2>Home</h2>
 
-      <img src="img/ias.jpeg" alt="Foto de Ias e Tata" class="foto">
+      <img src="img/ias.jpeg" alt="Foto de Ias e Tata" class="foto foto-clicavel" onclick="abrirCoracao3D()">
 
       <p>Bem-vindo ao site para minha princesa Ias.</p>
       <p>Aqui fica nossa página principal.</p>
       <h2>Saiba que eu te amo todos os dias da minha vida, e te quero pra sempre.</h2>
     </section>
   </main>
+  <script src="js/script.js"></script>
 </body>
 </html>
